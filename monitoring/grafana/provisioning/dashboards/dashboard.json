@@ -1,0 +1,33 @@
+// monitoring/grafana/provisioning/dashboards/your-dashboard.json
+
+{
+  "dashboard": {
+    "id": null,
+    "uid": "your-unique-id",
+    "title": "Your Dashboard Title",
+    "timezone": "browser",
+    "rows": [
+      {
+        "title": "Row 1",
+        "panels": [
+          {
+            "id": 1,
+            "type": "graph",
+            "title": "Panel 1",
+            "datasource": "YourDatasourceName",
+            "targets": [
+              {
+                "expr": "your_prometheus_query_here",
+                "format": "time_series"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 27,
+    "version": 0,
+    "links": []
+  },
+  "overwrite": false
+}
