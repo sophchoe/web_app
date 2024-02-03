@@ -1,14 +1,14 @@
 To run the project on AWS, you'll need to follow several steps. The process involves deploying your application, setting up infrastructure, and configuring services. Below are the general steps you might take:
 
-### 1. Set Up AWS Resources:
+#### 1. Set Up AWS Resources:
 Infrastructure as Code (Terraform):
 
-Navigate to the infrastructure/terraform/ directory.
-Run terraform init to initialize Terraform.
-Run terraform apply to create the necessary AWS resources.
-Terraform will prompt you to confirm the changes; type yes to proceed.
+* Navigate to the infrastructure/terraform/ directory.
+* Run terraform init to initialize Terraform.
+* Run terraform apply to create the necessary AWS resources.
+* Terraform will prompt you to confirm the changes; type yes to proceed.
 
-### 2. Deploy Backend (Server):
+#### 2. Deploy Backend (Server):
 Docker:
 
 Build Docker images for your server application.
@@ -20,7 +20,7 @@ AWS Lambda and API Gateway (Optional):
 
 If you have AWS Lambda functions and API Gateway, deploy them using the AWS Management Console or AWS CLI.
 
-### 3. Deploy Frontend (Client):
+#### 3. Deploy Frontend (Client):
 Docker:
 
 Build Docker images for your client application.
