@@ -1,0 +1,21 @@
+# kubernetes/server/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: your-server
+  template:
+    metadata:
+      labels:
+        app: your-server
+    spec:
+      containers:
+        - name: your-server-container
+          image: your-registry/your-server-image:latest
+          ports:
+            - containerPort: 3000
