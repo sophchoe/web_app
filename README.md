@@ -11,11 +11,11 @@ Infrastructure as Code (Terraform):
 #### 2. Deploy Backend (Server):
 Docker:
 
-Build Docker images for your server application.
-bash
-Copy code
+* Build Docker images for your server application.
+```
 cd docker/server/
 docker build -t your-server-image .
+```
 AWS Lambda and API Gateway (Optional):
 
 If you have AWS Lambda functions and API Gateway, deploy them using the AWS Management Console or AWS CLI.
