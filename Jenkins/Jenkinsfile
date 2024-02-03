@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+    
+    environment {
+        AWS_DEFAULT_REGION = 'us-east-1'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Check out the source code from version control
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Build your application (replace with your build commands)
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run your tests (replace with your test commands)
+                sh 'npm test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy to AWS (replace with your deployment commands)
+                sh 'terraform init'
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+
+    post {
+        success {
+            // Notify or perform additional actions on success
+            echo 'Deployment successful!'
+        }
+
+        failure {
+            // Notify or perform additional actions on failure
+            echo 'Deployment failed!'
+        }
+    }
+}
