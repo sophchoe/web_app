@@ -18,17 +18,16 @@ docker build -t your-server-image .
 ```
 AWS Lambda and API Gateway (Optional):
 
-If you have AWS Lambda functions and API Gateway, deploy them using the AWS Management Console or AWS CLI.
+* If you have AWS Lambda functions and API Gateway, deploy them using the AWS Management Console or AWS CLI.
 
 #### 3. Deploy Frontend (Client):
 Docker:
 
-Build Docker images for your client application.
-bash
-Copy code
+* Build Docker images for your client application.
+```
 cd docker/client/
 docker build -t your-client-image .
-
+```
 ### 4. Deploy Kubernetes (Optional):
 Kubernetes:
 
