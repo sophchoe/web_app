@@ -1,0 +1,30 @@
+swagger: '2.0'
+info:
+  title: 'User API'
+  version: '1.0'
+paths:
+  /users:
+    get:
+      summary: 'Get all users'
+      responses:
+        '200':
+          description: 'Successful response'
+      x-amazon-apigateway-integration:
+        uri: arn:aws:apigateway:REGION:lambda:path/2015-03-31/functions/ARN_OF_USER_LAMBDA_FUNCTION/invocations
+        httpMethod: POST
+        type: aws_proxy
+  /users/{userId}:
+    get:
+      summary: 'Get user by ID'
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 'Successful response'
+      x-amazon-apigateway-integration:
+        uri: arn:aws:apigateway:REGION:lambda:path/2015-03-31/functions/ARN_OF_USER_LAMBDA_FUNCTION/invocations
+        httpMethod: POST
+        type: aws_proxy
