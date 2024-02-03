@@ -1,0 +1,21 @@
+# kubernetes/client/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: your-client
+  template:
+    metadata:
+      labels:
+        app: your-client
+    spec:
+      containers:
+        - name: your-client-container
+          image: your-registry/your-client-image:latest
+          ports:
+            - containerPort: 80
