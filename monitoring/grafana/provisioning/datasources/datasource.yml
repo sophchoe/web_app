@@ -1,0 +1,12 @@
+# monitoring/grafana/provisioning/datasources/your-datasource.yml
+
+apiVersion: 1
+
+datasources:
+  - name: YourDatasourceName
+    type: prometheus
+    access: proxy
+    url: http://your-prometheus-server:9090
+    basicAuth: false
+    isDefault: true
+    editable: true
