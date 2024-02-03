@@ -1,0 +1,30 @@
+swagger: '2.0'
+info:
+  title: 'Post API'
+  version: '1.0'
+paths:
+  /posts:
+    get:
+      summary: 'Get all posts'
+      responses:
+        '200':
+          description: 'Successful response'
+      x-amazon-apigateway-integration:
+        uri: arn:aws:apigateway:REGION:lambda:path/2015-03-31/functions/ARN_OF_POST_LAMBDA_FUNCTION/invocations
+        httpMethod: POST
+        type: aws_proxy
+  /posts/{postId}:
+    get:
+      summary: 'Get post by ID'
+      parameters:
+        - name: postId
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: 'Successful response'
+      x-amazon-apigateway-integration:
+        uri: arn:aws:apigateway:REGION:lambda:path/2015-03-31/functions/ARN_OF_POST_LAMBDA_FUNCTION/invocations
+        httpMethod: POST
+        type: aws_proxy
