@@ -1,0 +1,14 @@
+# kubernetes/server/service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: your-server-service
+spec:
+  selector:
+    app: your-server
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
